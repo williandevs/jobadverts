@@ -7,6 +7,7 @@ use CodeIgniter\Config\Factories;
 
 class CategoryService
 {
+
     private $categoryModel;
 
     public function __construct()
@@ -18,8 +19,6 @@ class CategoryService
     public function getAllCategories()
     {
 
-
-
         $categories = $this->categoryModel->asObject()->orderBy('id', 'DESC')->findAll();
 
 
@@ -28,12 +27,13 @@ class CategoryService
         foreach ($categories as $category) {
 
             $data[] = [
-                'id' => $category->id,
-                'name' => $category->name,
-                'slug' => $category->slug,
-                'actions' =>  '<button class="btn btn-primary btn-md ">Ações</button>',
+                'id'         => $category->id,
+                'name'       => $category->name,
+                'slug'       => $category->slug,
+                'actions'    =>  '<button class="btn btn-primary btn-md ">Ações</button>',
             ];
         }
-        return  $data;
+
+        return   $data;
     }
 }

@@ -41,7 +41,7 @@ class CategoriesController extends BaseController
     ];
 
 
-    return $this->response->setJSON($response);
+   return $this->response->setJSON(['data' => $this->categoryService->getAllCategories()]);
    
 
    
