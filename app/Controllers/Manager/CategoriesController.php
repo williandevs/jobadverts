@@ -3,10 +3,12 @@
 namespace App\Controllers\Manager;
 
 use App\Controllers\BaseController;
-use app\Services\CategoryService;
+use App\Services\CategoryService;
 use CodeIgniter\Config\Factories;
 
+
 use function PHPUnit\Framework\returnSelf;
+
 
 class CategoriesController extends BaseController
 {
@@ -34,7 +36,7 @@ class CategoriesController extends BaseController
       return redirect()->back();
     }
 
-    $response = [];
+
     
     $response = [
       'data' => $this->categoryService->getAllCategories()

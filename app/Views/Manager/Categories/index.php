@@ -50,25 +50,20 @@
 
 
 <?= $this->section('scripts') ?>
-
 <script src="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.js"></script>
 
+
 <script>
+
+    
     $(document).ready(function() {
         $('#tadaTable').DataTable({
             ajax: '<?= route_to('categories.get.all'); ?>',
-            columns: [{
-                    data: 'id'
-                },
-                {
-                    data: 'name'
-                },
-                {
-                    data: 'slug'
-                },
-                {
-                    data: 'actions'
-                },
+            columns: [
+                {data:  'id'},
+                {data:  'name'},
+                {data: 'slug'},
+                {data: 'actions'},
 
             ],
         });
@@ -76,4 +71,3 @@
 </script>
 
 <?= $this->endSection() ?>
-
